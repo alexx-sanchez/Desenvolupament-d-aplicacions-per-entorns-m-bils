@@ -3,65 +3,74 @@ import fs from "fs"; //treballar amb arxius
 import bodyParser from "body-parser"; //Ho afegim per entendre que estem rebent un json des de la petició post.
 
 //Creo l'objecte de l'aplicació
-const app=express();
+const app = express();
 app.use(bodyParser.json())
 
-const readData=()=>{
-    try{
-        const data=fs.readFileSync("./db.json");
+const readData = () => {
+    try {
+        const data = fs.readFileSync("./db.json");
         //console.log(data);
         //console.log(JSON.parse(data));
         return JSON.parse(data)
 
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
 };
 //Funció per escriure informació
-const writeData=(data)=>{
-    try{
-        fs.writeFileSync("./db.json",JSON.stringify(data));
+const writeData = (data) => {
+    try {
+        fs.writeFileSync("./db.json", JSON.stringify(data));
 
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
 }
 //Funció per llegir la informació
 //readData();
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("Wellcome to my first API with Node.js");
 });
 
 //Creem un endpoint per obtenir tots els llibres
-app.get("/books",(req,res)=>{
-    const data=readData();
+app.get("/books", (req, res) => {
+    const data = readData();
     res.json(data.books);
 })
 //Creem un endpoint per obtenir un llibre per un id
-app.get("/books/:id",(req,res)=>{
-    const data=readData();
-    const id=parseInt(req.params.id);
-    const book=data.books.find((book)=>book.id===id);
+app.get("/books/:id", (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id);
+    const book = data.books.find((book) => book.id === id);
     res.json(book);
 })
 
 //Creem un endpoint del tipus post per afegir un llibre
 
-app.post("/books",(req,res)=>{
-    const data=readData();
-    const body=req.body;
+app.post("/books", (req, res) => {
+    const data = readData();
+    const body = req.body;
     // con los {} el nombre tiene que ser el campo que quieras sacar
     const { name } = req.body;
     console.log("Titol del llibre: ", name)
 
-    const newBook={
-        id:data.books.length+1,
-        ...body,
-    };
-    data.books.push(newBook);
-    writeData(data);
-    res.json(newBook);
+
+
+    // encuentra
+    if (!data.books.some((book) => book.name === name)) {
+        const newBook = {
+            id: data.books.length + 1,
+            ...body,
+        };
+
+        data.books.push(newBook);
+        writeData(data);
+        res.json(newBook);
+    } else {
+        console.log('Existeix');
+        return res.status(400).json("Aquest llibre ja existeix");
+    }
 });
 
 //Creem un endpoint per modificar un llibre
@@ -73,12 +82,12 @@ app.put("/books/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const bookIndex = data.books.findIndex((book) => book.id === id);
     data.books[bookIndex] = {
-      ...data.books[bookIndex],
-      ...body,
+        ...data.books[bookIndex],
+        ...body,
     };
     writeData(data);
     res.json({ message: "Book updated successfully" });
-  });
+});
 
 //Creem un endpoint per eliminar un llibre
 app.delete("/books/:id", (req, res) => {
@@ -88,9 +97,9 @@ app.delete("/books/:id", (req, res) => {
     data.books.splice(bookIndex, 1);
     writeData(data);
     res.json({ message: "Book deleted successfully" });
-  });
+});
 
 //Funció per escoltar
-app.listen(3000,()=>{
+app.listen(3000, () => {
     console.log("Server listing on port 3000");
 });
