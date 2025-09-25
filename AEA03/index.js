@@ -51,6 +51,7 @@ app.get("/books/:id",(req,res)=>{
 app.post("/books",(req,res)=>{
     const data=readData();
     const body=req.body;
+    // con los {} el nombre tiene que ser el campo que quieras sacar
     const { name } = req.body;
     console.log("Titol del llibre: ", name)
 
