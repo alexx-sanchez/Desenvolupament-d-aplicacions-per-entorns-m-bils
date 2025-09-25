@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0d1117; /* Azul muy oscuro / casi negro */
+    background: linear-gradient(135deg, #0d1117, #1f2233, #2a2d44); /* Gradiente elegante */
+    color: #e0e0e0; /* Gris claro para el texto */
+    min-height: 100vh;
+}
+
+/* HEADER HERO */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Animación de fade-in y slide-up para los títulos */
+header h1, header h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlide 1s forwards;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 600px;
+    line-height: 1.2;
+    animation-delay: 0.2s;
+    color: #f0c674; /* Dorado suave elegante */
+}
+
+header h2 {
+    font-size: 1.2rem;
+    color: #c0c0c0; /* Gris claro */
+    max-width: 600px;
+    margin: 20px 0 40px;
+    animation-delay: 0.5s;
+}
+
+/* Keyframes para animación */
+@keyframes fadeSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Formas curvas de fondo animadas */
+header::before, header::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 500px;
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 10s infinite alternate;
+}
+
+header::before {
+    top: -150px;
+    left: -200px;
+    background: linear-gradient(135deg, #4a4a4a, #1c1c1c);
+    opacity: 0.3;
+}
+
+header::after {
+    bottom: -200px;
+    right: -250px;
+    background: linear-gradient(135deg, #666666, #2a2a2a);
+    opacity: 0.2;
+}
+
+/* Animación lenta de las formas */
+@keyframes float {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(20px, 20px) rotate(15deg); }
+}
+
+/* MAIN GRID */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    list-style: none;
+}
+
+/* TARJETAS */
+.book-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.book-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.book-item strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #f0c674; /* Dorado elegante */
+}
+
+.book-item span {
+    display: block;
+    font-size: 1rem;
+    color: #b0b0b0; /* Gris suave */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.2rem; }
+    header h2 { font-size: 1rem; }
+}
+
+/* Enlaces del header */
+header a {
+    color: #f0c674; /* Dorado */
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid #f0c674;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+header a:hover {
+    background: #f0c674;
+    color: #0d1117; /* Texto oscuro sobre dorado */
+}

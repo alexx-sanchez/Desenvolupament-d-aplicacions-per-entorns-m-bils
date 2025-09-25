@@ -5,6 +5,9 @@ import bodyParser from "body-parser"; //Ho afegim per entendre que estem rebent 
 //Creo l'objecte de l'aplicació
 const app = express();
 app.use(bodyParser.json())
+app.use(express.static("public"));//carpeta publica pel css
+app.set('view engine', 'ejs');//Fem servir el motor ejs
+app.set('views', './views'); //carpeta on desem els arxius .ejs
 
 const readData = () => {
     try {
@@ -35,8 +38,14 @@ app.get("/", (req, res) => {
 
 //Creem un endpoint per obtenir tots els llibres
 app.get("/books", (req, res) => {
+    const user = { name: "Alex" }
+    const htmlMessage = `
+        <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
+        <a href="https://www.example.com">Visita Example</a>`;
     const data = readData();
-    res.json(data.books);
+    res.render("books", { user, data, htmlMessage })
+    //res.json(data.products);
+
 })
 //Creem un endpoint per obtenir un llibre per un id
 app.get("/books/:id", (req, res) => {
@@ -103,3 +112,12 @@ app.delete("/books/:id", (req, res) => {
 app.listen(3000, () => {
     console.log("Server listing on port 3000");
 });
+
+// nodemon
+// node
+// npm
+// +?
+
+
+// cuando este todo, carpeta node modules, -> npm i
+// npm run dev
