@@ -51,6 +51,9 @@ app.get("/books/:id",(req,res)=>{
 app.post("/books",(req,res)=>{
     const data=readData();
     const body=req.body;
+    const { name } = req.body;
+    console.log("Titol del llibre: ", name)
+
     const newBook={
         id:data.books.length+1,
         ...body,
