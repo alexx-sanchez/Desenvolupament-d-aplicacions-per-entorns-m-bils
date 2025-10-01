@@ -47,15 +47,47 @@ app.get("/books", (req, res) => {
     //res.json(data.products);
 
 })
-//Creem un endpoint per obtenir un llibre per un id
+
+app.put("/books/:id", (req, res) => {
+    const data = readData();
+    const body = req.body;
+    const id = parseInt(req.params.id);
+    const bookIndex = data.books.findIndex((book) => book.id === id);
+    data.books[bookIndex] = {
+        ...data.books[bookIndex],
+        ...body,
+    };
+    writeData(data);
+    res.json({ message: "Book updated successfully" });
+});
+
+
+
+//Funció per escoltar
+app.listen(3000, () => {
+    console.log("Server listing on port 3000");
+});
+
+// nodemon
+// node
+// npm
+// +?
+
+
+// cuando este todo, carpeta node modules, -> npm i
+// npm run dev
+
 app.get("/books/:id", (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
     const book = data.books.find((book) => book.id === id);
-    res.json(book);
-})
 
-//Creem un endpoint del tipus post per afegir un llibre
+    if (!book) {
+        return res.status(404).json("ERROR: BOOK NOT FOUND, TRY A DIFFERENT ONE");
+    } else {
+        res.json(book);
+    }
+})
 
 app.post("/books", (req, res) => {
     const data = readData();
@@ -82,42 +114,16 @@ app.post("/books", (req, res) => {
     }
 });
 
-//Creem un endpoint per modificar un llibre
-
-
-app.put("/books/:id", (req, res) => {
-    const data = readData();
-    const body = req.body;
-    const id = parseInt(req.params.id);
-    const bookIndex = data.books.findIndex((book) => book.id === id);
-    data.books[bookIndex] = {
-        ...data.books[bookIndex],
-        ...body,
-    };
-    writeData(data);
-    res.json({ message: "Book updated successfully" });
-});
-
-//Creem un endpoint per eliminar un llibre
 app.delete("/books/:id", (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
     const bookIndex = data.books.findIndex((book) => book.id === id);
+
+    if (bookIndex === -1) {
+        return res.status(404).json({ error: "Book not found" });
+    }
+
     data.books.splice(bookIndex, 1);
     writeData(data);
     res.json({ message: "Book deleted successfully" });
 });
-
-//Funció per escoltar
-app.listen(3000, () => {
-    console.log("Server listing on port 3000");
-});
-
-// nodemon
-// node
-// npm
-// +?
-
-
-// cuando este todo, carpeta node modules, -> npm i
-// npm run dev
