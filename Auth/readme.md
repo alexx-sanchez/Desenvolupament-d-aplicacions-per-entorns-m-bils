@@ -1,76 +1,67 @@
-# Registro de Usuario con Node.js y DB-Local
+# Registre d'usuari amb Node.js
 
-Aplicación sencilla para el registro de usuarios usando Node.js, Express y una base de datos local con DB-Local. Las contraseñas se almacenan de forma segura mediante hashing con bcryptjs y la interfaz se sirve con plantillas EJS.
-
----
-
-## Descripción
-
-Este proyecto permite a los usuarios registrarse con un nombre de usuario y contraseña. Se aplican validaciones básicas para asegurar que los datos sean correctos y que los nombres de usuario sean únicos. La contraseña se almacena en forma cifrada para garantizar la seguridad.
+Aquesta aplicació permet fer un registre d'usuaris en el servidor Node.js
 
 ---
 
-## Tecnologías utilizadas
+## Descripció
 
-- **Node.js** como entorno de ejecución.
-- **Express** para el servidor web.
-- **DB-Local** para almacenamiento local de datos.
-- **bcryptjs** para hashing seguro de contraseñas.
-- **EJS** para renderizado de vistas.
-- **JavaScript ES Modules** para modularización del código.
+Aquest projecte permet als usuaris registrar-se amb un nom d'usuari i contrasenya. S'apliquen validacions bàsiques per assegurar que les dades siguin correctes i que els noms d'usuari siguin únics. La contrasenya s'emmagatzema de manera xifrada per garantir la seguretat.
 
 ---
 
-## Funcionalidades principales
+## Tecnologies utilitzades
 
-- Registro de usuario con validación de datos.
-- Almacenamiento seguro de contraseñas.
-- Prevención de registros duplicados con nombres de usuario únicos.
-- Servidor con vista de registro accesible desde el navegador.
+- **Node.js** com a entorn d'execució.
+- **Express** per al servidor web.
+- **DB-Local** per a l'emmagatzematge local de dades.
+- **bcryptjs** per al xifrat segur de contrasenyes.
+- **EJS** per al renderitzat de vistes.
+- **JavaScript ES Modules** per a la modularització del codi.
 
 ---
 
-## Arquitectura del proyecto
+## Funcionalitats principals
 
-- **Servidor Express** que maneja rutas para servir la página de registro y para registrar usuarios.
-- **Repositorio de usuarios** que valida y almacena usuarios en la base de datos local.
-- **Vista con formulario de registro** renderizada con EJS.
-- **Archivos estáticos** para CSS y scripts en la carpeta pública.
+- Registre d'usuari amb validació de dades.
+- Emmagatzematge segur de contrasenyes.
+- Prevenció de registres duplicats amb noms d'usuari únics.
+- Servidor amb vista de registre accessible des del navegador.
+
+---
+
+## Arquitectura del projecte
+
+- **Servidor Express** que gestiona rutes per servir la pàgina de registre i per registrar usuaris.
+- **Repositori d'usuaris** que valida i emmagatzema usuaris a la base de dades local.
+- **Vista amb formulari de registre** renderitzada amb EJS.
+- **Fitxers estàtics** per a CSS i scripts a la carpeta pública.
 
 ---
 
 ## Endpoints disponibles
 
 - `GET /`  
-  Muestra el formulario de registro.
+  Mostra el formulari de registre.
 
 - `POST /register`  
-  Recibe datos de usuario para crear un nuevo registro. Retorna el ID generado para el usuario o un error si el registro falla.
+  Rep dades d'usuari per crear un nou registre. Retorna l’ID generat per a l’usuari o un error si el registre falla.
 
 ---
 
-## Validaciones aplicadas
+## Què hem vist fins ara?
 
-- El nombre de usuario debe tener al menos 3 caracteres.
-- La contraseña debe tener al menos 6 caracteres.
-- No se permiten nombres de usuario repetidos.
+Al llarg de les sessions realitzades fins ara, hem estudiat diferents conceptes vinculats amb el desenvolupament d’un servidor amb Node.js. Entre aquestes característiques hem vist: 
+ - Creació del servidor en si mateix, amb express
+ - Com configurar aquest, així com el port, endpoints...
+ - Com crear diferents endpoints, ja sigui get, post, put i delete
+ - Veure les diferents dependències que necessita un servidor node gràcies al package.json
+ - Com crear una bbdd per poder emmagatzemar dades
+ - Com fer les plantilles amb ejs per veure les diferents pagines del servidor
 
----
+## Exemples dels conceptes
 
-## Seguridad
-
-- Las contraseñas se almacenan cifradas mediante bcryptjs.
-- Los IDs de usuario se generan de forma única usando UUID.
-
----
-
-## Consideraciones
-
-Este proyecto es una base para un sistema de registro de usuarios que puede ser ampliado con funcionalidades de login, gestión de sesiones y más.
-
----
-
-## Licencia
-
-Proyecto de código abierto bajo licencia MIT.
-
+![Exemple endpoint](./public/img/endpoint.png)
+![Exemple server en marxa](./public/img/captura-cmd.png)
+![Exemple pagina registre](./public/img/pagina-registre.png)
+![Exemple arxiu config](./public/img/arxiu-config.png)
