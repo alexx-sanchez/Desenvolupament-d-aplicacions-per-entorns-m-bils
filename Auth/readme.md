@@ -64,7 +64,7 @@ Al llarg de les sessions realitzades fins ara, hem estudiat diferents conceptes 
  - Exemple d'un endpoint  
 ![Exemple endpoint](./public/img/endpoint.png)
 
- - Servidor en marxa 
+ - Servidor en marxa <br>
 ![Exemple server en marxa](./public/img/captura-cmd.png)
 
  - Pagina de registre  
