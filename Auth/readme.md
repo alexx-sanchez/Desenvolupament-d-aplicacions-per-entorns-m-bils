@@ -61,7 +61,14 @@ Al llarg de les sessions realitzades fins ara, hem estudiat diferents conceptes 
 
 ## Exemples dels conceptes
 
+ - Exemple d'un endpoint
 ![Exemple endpoint](./public/img/endpoint.png)
+
+ - Servidor en marxa
 ![Exemple server en marxa](./public/img/captura-cmd.png)
+
+ - Pagina de registre
 ![Exemple pagina registre](./public/img/pagina-registre.png)
+
+ - Arxiu de configuració
 ![Exemple arxiu config](./public/img/arxiu-config.png)
