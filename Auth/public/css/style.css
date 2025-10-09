@@ -1,0 +1,230 @@
+/* ========================
+   Estilos globales
+   ======================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #121212; /* negro profundo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #CCCCCC;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* permite apilar en pantallas pequeñas */
+  z-index: 1;
+  position: relative;
+}
+
+/* ========================
+   Formulario de registro
+   ======================== */
+form#register-form,
+form#login-form {
+  background: #333333;
+  padding: 3rem 3.5rem;
+  border-radius: 15px;
+  width: 360px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;               /* para animación */
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+form#register-form {
+  animation-delay: 0.1s;
+}
+
+form#login-form {
+  animation-delay: 0.3s;
+}
+
+form#register-form h2,
+form#login-form h2 {
+  margin-bottom: 2rem;
+  font-weight: 800;
+  color: #8A79AF; /* morado pastel */
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+form#register-form label,
+form#login-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #CCCCCC;
+}
+
+form#register-form input,
+form#login-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid #777777;
+  background: #222222;
+  color: #CCCCCC;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+form#register-form input:focus,
+form#login-form input:focus {
+  outline: none;
+  border-color: #8A79AF;
+  background-color: #2a2a2a;
+  box-shadow: 0 0 8px 2px #8A79AF;
+}
+
+form#register-form button,
+form#login-form button {
+  background: #8A79AF;
+  color: #121212;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 0;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 -4px 0 #6f6093;
+}
+
+form#register-form button:hover,
+form#login-form button:hover {
+  background-color: #7a6ca8;
+  box-shadow: inset 0 -4px 0 #5c5279, 0 6px 12px rgba(138, 121, 175, 0.6);
+  transform: translateY(-3px);
+}
+
+form#register-form button:active,
+form#login-form button:active {
+  background-color: #6f6093;
+  box-shadow: inset 0 -2px 0 #4b436b;
+  transform: translateY(1px);
+}
+
+form#register-form span,
+form#login-form span {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  min-height: 24px;
+  color: #8A79AF;
+}
+
+/* ========================
+   Panel de usuario
+   ======================== */
+.form-container h2 {
+  color: #8A79AF;
+  text-align: center;
+}
+
+.form-container p {
+  text-align: center;
+  color: #CCCCCC;
+  margin-bottom: 1.5rem;
+}
+
+.form-container button,
+.form-container a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.form-container button {
+  background-color: #8A79AF;
+  color: #121212;
+  border: none;
+  box-shadow: inset 0 -4px 0 #6f6093;
+  transition: 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #7a6ca8;
+  box-shadow: inset 0 -4px 0 #5c5279;
+  transform: translateY(-2px);
+}
+
+.form-container a {
+  background-color: #333333;
+  color: #8A79AF;
+  border: 2px solid #8A79AF;
+}
+
+.form-container a:hover {
+  background-color: #8A79AF;
+  color: #121212;
+}
+
+/* ========================
+   Fondo animado
+   ======================== */
+.animated-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(270deg, #8A79AF, #333333, #777777, #121212);
+  background-size: 800% 800%;
+  animation: gradientShift 30s ease infinite;
+  z-index: 0;
+  filter: brightness(0.7);
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* ========================
+   Animación de entrada
+   ======================== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  form#login-form,
+  form#register-form {
+    width: 90%;
+    padding: 2rem;
+  }
+}

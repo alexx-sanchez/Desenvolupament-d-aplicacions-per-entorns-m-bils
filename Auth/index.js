@@ -1,21 +1,21 @@
 import express from 'express';
 import { PORT, SECRET_JWT_KEY } from './config.js';
 import { UserRepository } from './user-repository.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 app.use(express.json());
-app.use(express.static("public")); // carregar css
-
+app.use(cookieParser());
+app.use(express.static("public")); // carregar arxius static (com css)
 app.set('view engine', 'ejs'); // selecciona EJS como el motor de plantillas para renderizar vistas con HTML
 app.set('views', './views');
 
-app.listen(PORT, () => console.log('Server running on port', PORT));
+app.get('/', (req, res) => {
+    res.render('register');
+});
 
-// ENDPOINTS START
-
-app.get("/", (req, res) => {
-    // const { user } = req.session
-    res.render('register')
+app.get('/protected', (req, res) => {
+    res.render('protected');
 });
 
 app.post('/register', async (req, res) => {
@@ -30,3 +30,5 @@ app.post('/register', async (req, res) => {
         res.status(400).send({ error: error.message })
     }
 });
+
+app.listen(PORT, () => console.log('Server running on port', PORT));
