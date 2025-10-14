@@ -10,20 +10,20 @@
 
 <body>
     <header>
-        <h1>Gestió de Productes per <%= user.name %>!</h1>
+        <h1>Gestió de Jocs per <%= user.name %>!</h1>
         <h2><%- htmlMessage %></h2>
     </header>
     <main>
         <section>
-            <h2>Detall de producte</h2>
+            <h2>Detall del joc</h2>
             <ul class="product-list">
 
                 <li class="product-item">
                     <strong>
-                        <%= product.name %>
+                        <%= game.name %>
                     </strong>
-                    <span>Categoria: <%= product.category %></span>
-                    <span>Preu: €<%= product.price %></span>
+                    <span>Categoria: <%= game.category %></span>
+                    <span>Preu: €<%= game.price %></span>
                 </li>
 
             </ul>
