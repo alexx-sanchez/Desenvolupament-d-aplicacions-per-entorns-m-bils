@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     const data = readData();
     res.render("games", { user, data, htmlMessage });
 });
-router.get('/editJoc/:id', (req, res) => {
+router.get('/editGame/:id', (req, res) => {
     const user = { name: "Alex" };
     const htmlMessage = `
     <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
