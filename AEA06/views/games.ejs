@@ -23,9 +23,15 @@
                             <%= game.name %>
                         </strong>
                         <span>Categoria: <%= game.category %></span>
-                        <span>Preu: €<%= game.price %></span>
+                        <span>Preu: <%= game.price %> €</span>
                         <span><a href="/games/<%=game.id %>">Detall Joc</a></span>
                         <span><a href="/games/editGame/<%=game.id %>">Editar joc</a></span>
+                        <span>
+                            <form action="/games/<%= game.id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" class="link-button">Eliminar Joc</button>
+                            </form>
+                        </span>
+
                     </li>
                     <% }) %>
             </ul>

@@ -23,7 +23,10 @@
                             <%= team.name %>
                         </strong>
                         <span>Pais: <%= team.country %></span>
-                        <span>Campionats de contructors: <%= team.worldChampionships %></span>
+                        <span>Campionats de constructors: <%= team.worldChampionships %></span>
+                        <span><a href="/teams/<%= team.id %>">Detall Equip</a></span>
+                        <span><a href="/teams/editTeam/<%= team.id %>">Editar equip</a></span>
+                        <span><a href="/teams/deleteTeam/<%= team.id %>">Eliminar equip</a></span>
                     </li>
                     <% }) %>
             </ul>

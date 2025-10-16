@@ -64,7 +64,11 @@ router.delete('/:id', (req, res) => {
     if (gameIndex === -1) return res.status(404).send('Game not found');
     data.games.splice(gameIndex, 1);
     writeData(data);
-    res.json({ message: 'Game deleted successfully' });
+
+    // Redirigir a la página anterior
+    const backURL = req.get('Referer') || '/games';
+    res.redirect(backURL);
 });
+
 
 export default router;

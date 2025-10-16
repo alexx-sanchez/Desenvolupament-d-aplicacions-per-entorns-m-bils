@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     const user = { name: "Alex" };
     const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
                          <a href="/">Home</a>`;
-    res.render("team", { user, data, htmlMessage });
+    res.render("teams", { user, data, htmlMessage });
 });
 
 router.get('/:id', (req, res) => {
