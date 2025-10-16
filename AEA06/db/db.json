@@ -1,1 +1,90 @@
-{"teams":[{"id":1,"name":"Mercedes","country":"Germany","worldChampionships":8},{"id":2,"name":"Red Bull Racing","country":"Austria","worldChampionships":6},{"id":3,"name":"Ferrari","country":"Italy","worldChampionships":16},{"id":4,"name":"McLaren","country":"United Kingdom","worldChampionships":8},{"id":5,"name":"Alpine","country":"France","worldChampionships":2},{"id":6,"name":"Aston Martin","country":"United Kingdom","worldChampionships":0},{"id":7,"name":"AlphaTauri","country":"Italy","worldChampionships":0},{"id":8,"name":"Williams","country":"United Kingdom","worldChampionships":9},{"id":9,"name":"Haas","country":"USA","worldChampionships":0},{"id":10,"name":"Alfa Romeo","country":"Switzerland","worldChampionships":2}],"games":[{"id":1,"name":"The Legend of Zelda: Breath of the Wild","price":"60","category":"Adventure"},{"id":2,"name":"Rocket League","price":"19.99","category":"Sports"},{"id":3,"name":"GTA V","price":"29.99","category":"Action"},{"id":4,"name":"Valorant","price":"0","category":"Shooter"}]}
+{
+    "teams": [
+        {
+            "id": 1,
+            "name": "McLaren",
+            "country": "United Kingdom",
+            "worldChampionships": 9
+        },
+        {
+            "id": 2,
+            "name": "Mercedes",
+            "country": "Germany",
+            "worldChampionships": "8"
+        },
+        {
+            "id": 3,
+            "name": "Ferrari",
+            "country": "Italy",
+            "worldChampionships": 16
+        },
+        {
+            "id": 4,
+            "name": "Red Bull Racing",
+            "country": "Austria",
+            "worldChampionships": 6
+        },
+        {
+            "id": 5,
+            "name": "Williams",
+            "country": "United Kingdom",
+            "worldChampionships": 9
+        },
+        {
+            "id": 6,
+            "name": "Racing Bulls",
+            "country": "Italy",
+            "worldChampionships": 0
+        },
+        {
+            "id": 7,
+            "name": "Aston Martin",
+            "country": "United Kingdom",
+            "worldChampionships": 0
+        },
+        {
+            "id": 8,
+            "name": "Kick Sauber",
+            "country": "Switzerland",
+            "worldChampionships": 0
+        },
+        {
+            "id": 9,
+            "name": "Haas",
+            "country": "United States",
+            "worldChampionships": 0
+        },
+        {
+            "id": 10,
+            "name": "Alpine",
+            "country": "France",
+            "worldChampionships": 2
+        }
+    ],
+    "games": [
+        {
+            "id": 1,
+            "name": "The Legend of Zelda: Breath of the Wild",
+            "price": "60",
+            "category": "Adventure"
+        },
+        {
+            "id": 2,
+            "name": "Rocket League",
+            "price": "19.99",
+            "category": "Sports"
+        },
+        {
+            "id": 3,
+            "name": "GTA V",
+            "price": "29.99",
+            "category": "Action"
+        },
+        {
+            "id": 4,
+            "name": "Valorant",
+            "price": "0",
+            "category": "Shooter"
+        }
+    ]
+}

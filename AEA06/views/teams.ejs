@@ -26,7 +26,11 @@
                         <span>Campionats de constructors: <%= team.worldChampionships %></span>
                         <span><a href="/teams/<%= team.id %>">Detall Equip</a></span>
                         <span><a href="/teams/editTeam/<%= team.id %>">Editar equip</a></span>
-                        <span><a href="/teams/deleteTeam/<%= team.id %>">Eliminar equip</a></span>
+                        <span>
+                            <form action="/teams/<%= team.id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" class="link-button">Eliminar Equip</button>
+                            </form>
+                        </span>
                     </li>
                     <% }) %>
             </ul>
