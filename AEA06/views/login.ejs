@@ -5,18 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and registration</title>
-    <link rel="stylesheet" type="text/css" href="/login.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 
 <body>
     <div class="container">
         <% if (typeof username!='undefined' ) { %>
-            <div class="form-container">
-                <h2>Hola <%=username%>!</h2>
-                <p>Estas en el panel de admin</p>
-                <button id="close-session">Cerrar sesión</button>
-                <a href="/protected">Seguir administrando</a>
-            </div>
+            <script>
+                // Redirigir automáticamente a home.ejs
+                window.location.href = "/protected";
+            </script>
             <% } %>
 
                 <% if (typeof username==='undefined' ) { %>

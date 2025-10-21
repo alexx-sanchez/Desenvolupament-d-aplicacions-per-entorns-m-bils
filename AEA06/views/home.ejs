@@ -4,17 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 
 <body>
-    Home
-    <ul>
-        <li><a href="/games">Llistat jocs</a></li>
-    </ul>
-    <ul>
-        <li><a href="/teams">Llistat equips</a></li>
-    </ul>
+    <header>
+        <h1>Panel de Administración</h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Hola <%= username %>!</h2>
+            <p>Estás en el panel de administrador.</p>
+
+            <nav>
+                <ul>
+                    <li><a href="/games">Llistat de jocs</a></li>
+                    <li><a href="/teams">Llistat d'equips</a></li>
+                </ul>
+            </nav>
+
+            <form action="/logout" method="POST">
+                <button type="submit" id="close-session">Cerrar sesión</button>
+            </form>
+        </div>
+    </main>
 </body>
 
 </html>
