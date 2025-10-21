@@ -12,22 +12,25 @@
     <header>
         <h1>Gestió de Jocs per <%= user.name %>!</h1>
         <a href="/" class="back-button">Home</a>
+        <a href="/games/create" class="create-button">Crear Nou Joc</a>
     </header>
 
     <main>
         <section>
             <h2>Llista de Jocs</h2>
             <ul class="item-list">
-                <% data.games.forEach(game => { %>
+                <% data.games.forEach(game=> { %>
                     <li class="item">
                         <a href="/games/<%= game.id %>" class="item-link">
                             <img src="<%= game.photo %>" alt="<%= game.name %>" class="photo">
-                            <strong><%= game.name %></strong>
+                            <strong>
+                                <%= game.name %>
+                            </strong>
                             <span>Categoria: <%= game.category %></span>
                             <span>Preu: <%= game.price %> €</span>
                         </a>
                     </li>
-                <% }) %>
+                    <% }) %>
             </ul>
         </section>
     </main>
