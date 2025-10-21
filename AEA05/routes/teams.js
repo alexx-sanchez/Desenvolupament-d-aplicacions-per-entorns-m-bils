@@ -10,20 +10,36 @@ const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data
 router.get('/', (req, res) => {
     const data = readData();
     const user = { name: "Alex" };
-    const htmlMessage = `<a href="/">Home</a>`;
-    res.render("teams", { user, data, htmlMessage });
+    res.render("teams", { user, data });
 });
 
-// Detalle de equipo
-router.get('/:id', (req, res) => {
-    const data = readData();
-    const id = parseInt(req.params.id);
-    const team = data.teams.find(team => team.id === id);
-    if (!team) return res.status(404).send('team not found');
-
+// Mostrar formulario para crear un nuevo equipo
+router.get('/create', (req, res) => {
     const user = { name: "Alex" };
-    const htmlMessage = `<a href="/teams">Llistat d'equips</a>`;
-    res.render("team", { user, team, htmlMessage });
+    res.render('create_team', { user });
+});
+
+// Crear nuevo equipo desde formulario
+router.post('/create', (req, res) => {
+    const data = readData();
+    const { name, country, worldChampionships, photo } = req.body;
+
+    if (!name || !country || worldChampionships === undefined || !photo) {
+        return res.status(400).send('All fields are required');
+    }
+
+    const newTeam = {
+        id: data.teams.length ? data.teams[data.teams.length - 1].id + 1 : 1,
+        name,
+        country,
+        worldChampionships: parseInt(worldChampionships),
+        photo
+    };
+
+    data.teams.push(newTeam);
+    writeData(data);
+
+    res.redirect('/teams');
 });
 
 // Editar equipo (formulario)
@@ -34,20 +50,7 @@ router.get('/editTeam/:id', (req, res) => {
     if (!team) return res.status(404).send('team not found');
 
     const user = { name: "Alex" };
-    const htmlMessage = `<a href="/teams">Llistat d'equips</a>`;
-    res.render("edit_team", { user, team, htmlMessage });
-});
-
-// Crear nuevo equipo
-router.post('/', (req, res) => {
-    const data = readData();
-    const { name, country, worldChampionships } = req.body;
-    if (!name || !country || worldChampionships === undefined) return res.status(400).send('All fields are required');
-
-    const newTeam = { id: data.teams.length + 1, name, country, worldChampionships: parseInt(worldChampionships) };
-    data.teams.push(newTeam);
-    writeData(data);
-    res.redirect('/teams');
+    res.render("edit_team", { user, team });
 });
 
 // Editar equipo existente
@@ -62,7 +65,18 @@ router.put('/:id', (req, res) => {
     res.redirect('/teams');
 });
 
-// Eliminar equipo y redirigir a la lista
+// Detalle de equipo
+router.get('/:id', (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id);
+    const team = data.teams.find(team => team.id === id);
+    if (!team) return res.status(404).send('team not found');
+
+    const user = { name: "Alex" };
+    res.render("team", { user, team });
+});
+
+// Eliminar equipo
 router.delete('/:id', (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
@@ -72,8 +86,7 @@ router.delete('/:id', (req, res) => {
     data.teams.splice(teamIndex, 1);
     writeData(data);
 
-    const backURL = req.get('Referer') || '/teams';
-    res.redirect(backURL);
+    res.redirect('/teams');
 });
 
 export default router;

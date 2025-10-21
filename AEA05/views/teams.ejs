@@ -12,6 +12,7 @@
     <header>
         <h1>Gestió de Equips per <%= user.name %>!</h1>
         <a href="/" class="back-button">Home</a>
+        <a href="/teams/create" class="create-button">Crear Nou Equip</a>
     </header>
 
     <main>
@@ -21,7 +22,6 @@
                 <% data.teams.forEach(team => { %>
                     <li class="item">
                         <a href="/teams/<%= team.id %>" class="item-link">
-                            <!-- Imagen del equipo -->
                             <img src="<%= team.photo %>" alt="<%= team.name %>" class="photo">
                             <strong><%= team.name %></strong>
                             <span>Pais: <%= team.country %></span>

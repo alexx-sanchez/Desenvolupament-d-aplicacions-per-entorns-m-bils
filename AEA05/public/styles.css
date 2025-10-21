@@ -219,3 +219,22 @@ header h2 {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
+
+.create-button {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #28a745; /* verde */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.create-button:hover {
+    background-color: #218838; /* verde más oscuro al pasar */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}

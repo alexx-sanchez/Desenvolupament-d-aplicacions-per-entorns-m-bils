@@ -75,11 +75,10 @@ app.post('/register', async (req, res) => {
 });
 
 app.post('/logout', (req, res) => {
-    res
-        .clearCookie('access_token')
-        .json({ message: 'logout successfull' })
-        .send('logout');
+    res.clearCookie('access_token'); // borra la cookie
+    res.redirect('/');          // redirige al login
 });
+
 
 app.get('/protected2', (req, res) => {
     const { user } = req.session
