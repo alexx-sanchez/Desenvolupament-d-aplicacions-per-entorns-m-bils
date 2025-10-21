@@ -4,61 +4,71 @@
             "id": 1,
             "name": "McLaren",
             "country": "United Kingdom",
-            "worldChampionships": 9
+            "worldChampionships": "9",
+            "photo": "https://static.vecteezy.com/system/resources/previews/020/500/043/non_2x/mclaren-brand-logo-symbol-orange-design-british-car-automobile-illustration-free-vector.jpg"
         },
         {
             "id": 2,
             "name": "Mercedes",
             "country": "Germany",
-            "worldChampionships": "8"
+            "worldChampionships": "8",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png"
         },
         {
             "id": 3,
             "name": "Ferrari",
             "country": "Italy",
-            "worldChampionships": 16
+            "worldChampionships": 16,
+            "photo": "https://logos-world.net/wp-content/uploads/2020/07/Ferrari-Scuderia-Logo-700x394.png"
         },
         {
             "id": 4,
             "name": "Red Bull Racing",
             "country": "Austria",
-            "worldChampionships": 6
+            "worldChampionships": 6,
+            "photo": "https://images.seeklogo.com/logo-png/40/2/red-bull-racing-f1-logo-png_seeklogo-406796.png"
         },
         {
             "id": 5,
             "name": "Williams",
             "country": "United Kingdom",
-            "worldChampionships": 9
+            "worldChampionships": 9,
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Logo_Williams_F1.png/960px-Logo_Williams_F1.png"
         },
         {
             "id": 6,
             "name": "Racing Bulls",
             "country": "Italy",
-            "worldChampionships": 0
+            "worldChampionships": 0,
+            "photo": "https://destinationformula1.com/wp-content/uploads/2025/03/racing-bulls.png"
         },
         {
             "id": 7,
             "name": "Aston Martin",
             "country": "United Kingdom",
-            "worldChampionships": 0
+            "worldChampionships": 0,
+            "photo": "https://1000logos.net/wp-content/uploads/2020/02/Aston-Martin-Logo.png"
         },
         {
             "id": 8,
             "name": "Kick Sauber",
             "country": "Switzerland",
-            "worldChampionships": 0
+            "worldChampionships": 0,
+            "photo": "https://f1store2.formula1.com/content/assets/Formula_1_Kick_Sauber_9887-1184079496386.0635.svg"
         },
         {
             "id": 9,
             "name": "Haas",
             "country": "United States",
-            "worldChampionships": 0
+            "worldChampionships": 0,
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Logo_Haas_F1.png"
         },
         {
             "id": 10,
             "name": "Alpine",
             "country": "France",
-            "worldChampionships": 2
+            "worldChampionships": 2,
+            "photo": "https://download.logo.wine/logo/Alpine_(automobile)/Alpine_(automobile)-Logo.wine.png"
         }
     ],
     "games": [
@@ -66,25 +76,29 @@
             "id": 1,
             "name": "The Legend of Zelda: Breath of the Wild",
             "price": "60",
-            "category": "Adventure"
+            "category": "Adventure",
+            "photo": "https://gaming-cdn.com/images/products/2616/orig/the-legend-of-zelda-breath-of-the-wild-switch-juego-nintendo-eshop-europe-cover.jpg?v=1730381682"
         },
         {
             "id": 2,
             "name": "Rocket League",
             "price": "19.99",
-            "category": "Sports"
+            "category": "Sports",
+            "photo": "https://logos-world.net/wp-content/uploads/2020/11/Rocket-League-Emblem.png"
         },
         {
             "id": 3,
             "name": "GTA V",
             "price": "29.99",
-            "category": "Action"
+            "category": "Action",
+            "photo": "https://logos-world.net/wp-content/uploads/2021/02/Grand-Theft-Auto-V-GTA-5-Logo.png"
         },
         {
             "id": 4,
             "name": "Valorant",
             "price": "0",
-            "category": "Shooter"
+            "category": "Shooter",
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png"
         }
     ]
 }

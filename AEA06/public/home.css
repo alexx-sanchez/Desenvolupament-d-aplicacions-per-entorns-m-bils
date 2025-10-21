@@ -1,0 +1,131 @@
+/* ========================
+   Estilos globales
+   ======================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8; /* gris muy claro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+}
+
+/* ========================
+   Header
+   ======================== */
+header {
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ========================
+   Contenedor principal
+   ======================== */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* ========================
+   Tarjeta de usuario
+   ======================== */
+.card-item {
+  background: #ffffff;
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-item h2 {
+  color: #1e3a8a; /* azul principal */
+  margin: 0;
+}
+
+.card-item p {
+  color: #555555;
+  margin: 0 0 1rem 0;
+}
+
+/* ========================
+   Navegación tipo tarjetas
+   ======================== */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-link {
+  display: block;
+  background-color: #e6f0ff; /* azul muy suave */
+  color: #1e3a8a; /* azul principal */
+  padding: 16px 0;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.nav-link:hover {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* ========================
+   Botón cerrar sesión
+   ======================== */
+.btn-link {
+  background-color: #1e3a8a; /* azul principal */
+  color: #ffffff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 800px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .card-item {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .nav-list {
+    gap: 0.8rem;
+  }
+}

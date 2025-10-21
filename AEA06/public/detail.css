@@ -1,0 +1,176 @@
+/* ========================
+   Reset & Global
+   ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f0f0f5; /* fondo claro igual que en las tarjetas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: #333;
+}
+
+/* ========================
+   Header
+   ======================== */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #1a73e8; /* azul principal igual que en tarjetas */
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 400;
+}
+
+/* ========================
+   Contenedor de detalle
+   ======================== */
+.detail-section {
+    width: 100%;
+    max-width: 600px; /* más ancho que antes */
+}
+
+.detail-card {
+    background: #ffffff; /* mismo blanco que en las tarjetas */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================
+   Imagen
+   ======================== */
+.item-photo, .team-photo {
+    width: 180px; /* más grande */
+    height: 180px; /* más grande */
+    object-fit: cover;
+    border-radius: 12px; /* bordes cuadrados suavizados como en tarjetas */
+    margin: 0 auto;
+    border: 3px solid #1a73e8; /* azul principal */
+}
+
+/* ========================
+   Nombres y textos
+   ======================== */
+.item-name, .team-name {
+    font-size: 1.6rem;
+    color: #1a73e8; /* azul principal */
+}
+
+.detail-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ========================
+   Botones de acción
+   ======================== */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    padding: 0.7rem 1.2rem; /* más ancho */
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.detail-button {
+    background-color: #e6f0ff; /* azul muy claro como hover de tarjeta */
+    color: #1a73e8;
+}
+
+.detail-button:hover {
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+.edit-button {
+    background-color: #ffec99; /* amarillo */
+    color: #333;
+}
+
+.edit-button:hover {
+    background-color: #ffdb4d;
+}
+
+.delete-button {
+    background-color: #ff6b6b; /* rojo */
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #ff3b3b;
+}
+
+/* ========================
+   Botón de volver
+   ======================== */
+.back-button {
+    display: inline-block;
+    padding: 0.7rem 1.5rem; /* más ancho */
+    background-color: #1a73e8; /* azul principal */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #1666c1; /* azul más oscuro al pasar */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 600px) {
+    .detail-card {
+        padding: 1.5rem;
+    }
+
+    .item-photo, .team-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .back-button {
+        padding: 0.6rem 1.2rem;
+    }
+}

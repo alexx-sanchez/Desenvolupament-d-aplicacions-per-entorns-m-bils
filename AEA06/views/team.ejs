@@ -4,29 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benvingut</title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Detall de l'Equip</title>
+    <link rel="stylesheet" type="text/css" href="/detail.css">
 </head>
 
 <body>
     <header>
         <h1>Gestió de Equips per <%= user.name %>!</h1>
-        <h2><%- htmlMessage %></h2>
+        <a href="/teams" class="back-button">Tornar a llistat</a>
     </header>
+
     <main>
-        <section>
-            <h2>Detall del equip</h2>
-            <ul class="product-list">
+        <section class="detail-section">
+            <h2>Detall de l'Equip</h2>
+            <div class="detail-card">
+                <% if (team.photo) { %>
+                    <img src="<%= team.photo %>" alt="Foto de <%= team.name %>" class="team-photo">
+                <% } else { %>
+                    <img src="/default-team.png" alt="Foto por defecto" class="team-photo">
+                <% } %>
 
-                <li class="product-item">
-                    <strong>
-                        <%= team.name %>
-                    </strong>
-                    <span>Pais: <%= team.country %></span>
-                    <span>Campionats de Constructors: <%= team.worldChampionships %></span>
-                </li>
+                <h3 class="team-name"><%= team.name %></h3>
+                <p><strong>Pais:</strong> <%= team.country %></p>
+                <p><strong>Campionats de Constructors:</strong> <%= team.worldChampionships %></p>
 
-            </ul>
+                <div class="action-buttons">
+                    <!-- Botón Editar -->
+                    <form action="/teams/editTeam/<%= team.id %>" method="GET">
+                        <button type="submit" class="action-button edit-button">Editar Equip</button>
+                    </form>
+
+                    <!-- Botón Eliminar -->
+                    <form action="/teams/<%= team.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="action-button delete-button">Eliminar Equip</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 </body>

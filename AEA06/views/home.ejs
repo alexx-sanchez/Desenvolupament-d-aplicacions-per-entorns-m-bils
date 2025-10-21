@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" type="text/css" href="/home.css">
 </head>
 
 <body>
@@ -13,20 +13,20 @@
         <h1>Panel de Administración</h1>
     </header>
 
-    <main>
-        <div class="form-container">
+    <main class="container">
+        <div class="card-item">
             <h2>Hola <%= username %>!</h2>
             <p>Estás en el panel de administrador.</p>
 
             <nav>
-                <ul>
-                    <li><a href="/games">Llistat de jocs</a></li>
-                    <li><a href="/teams">Llistat d'equips</a></li>
+                <ul class="nav-list">
+                    <li><a href="/games" class="nav-link">Llistat de jocs</a></li>
+                    <li><a href="/teams" class="nav-link">Llistat d'equips</a></li>
                 </ul>
             </nav>
 
             <form action="/logout" method="POST">
-                <button type="submit" id="close-session">Cerrar sesión</button>
+                <button type="submit" class="btn-link">Cerrar sesión</button>
             </form>
         </div>
     </main>

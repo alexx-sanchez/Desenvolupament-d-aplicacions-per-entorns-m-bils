@@ -8,15 +8,14 @@ const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data
 
 router.get('/', (req, res) => {
     const user = { name: "Alex" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
+    const htmlMessage = `<p>Llistat de jocs disponibles</p>
                          <a href="/">Home</a>`;
     const data = readData();
     res.render("games", { user, data, htmlMessage });
 });
 router.get('/editGame/:id', (req, res) => {
     const user = { name: "Alex" };
-    const htmlMessage = `
-    <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
+    const htmlMessage = `<p>Llistat de jocs disponibles</p>
     <a href="/games">Llistat de jocs</a>`;
 
     const data = readData();
@@ -29,7 +28,7 @@ router.get('/editGame/:id', (req, res) => {
 
 router.get('/:id', (req, res) => {
     const user = { name: "Alex" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
+    const htmlMessage = `<p>Llistat de jocs disponibles</p>
                          <a href="/games">Llistat de jocs</a>`;
     const data = readData();
     const game = data.games.find(j => j.id === parseInt(req.params.id));

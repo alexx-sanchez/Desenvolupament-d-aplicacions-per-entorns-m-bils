@@ -10,8 +10,7 @@ const writeData = (data) => fs.writeFileSync('./db/db.json', JSON.stringify(data
 router.get('/', (req, res) => {
     const data = readData();
     const user = { name: "Alex" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-                         <a href="/">Home</a>`;
+    const htmlMessage = `<a href="/">Home</a>`;
     res.render("teams", { user, data, htmlMessage });
 });
 
@@ -23,8 +22,7 @@ router.get('/:id', (req, res) => {
     if (!team) return res.status(404).send('team not found');
 
     const user = { name: "Alex" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-                         <a href="/teams">Llistat d'equips</a>`;
+    const htmlMessage = `<a href="/teams">Llistat d'equips</a>`;
     res.render("team", { user, team, htmlMessage });
 });
 
@@ -36,8 +34,7 @@ router.get('/editTeam/:id', (req, res) => {
     if (!team) return res.status(404).send('team not found');
 
     const user = { name: "Alex" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-                         <a href="/teams">Llistat d'equips</a>`;
+    const htmlMessage = `<a href="/teams">Llistat d'equips</a>`;
     res.render("edit_team", { user, team, htmlMessage });
 });
 

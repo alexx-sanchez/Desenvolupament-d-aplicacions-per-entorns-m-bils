@@ -10,24 +10,34 @@
 
 <body>
     <header>
-        <h1>Editar Equip: <%= team.name %>
-        </h1>
+        <h1>Editar Equip: <%= team.name %></h1>
     </header>
 
-    <main>
-        <form action="/teams/<%= team.id %>?_method=PUT" method="POST">
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" value="<%= team.name %>" required>
+    <main class="container">
+        <div class="card-item">
+            <!-- Preview de la imagen -->
+            <% if (team.photo) { %>
+                <img src="<%= team.photo %>" alt="<%= team.name %>" class="item-photo" style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin:0 auto 1rem;">
+            <% } %>
 
-            <label for="country">Pais:</label>
-            <input type="text" id="country" name="country" value="<%= team.country %>" required>
+            <form action="/teams/<%= team.id %>?_method=PUT" method="POST" class="form-card">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" value="<%= team.name %>" required>
 
-            <label for="worldChampionships">Campionats de Contructors:</label>
-            <input type="number" id="worldChampionships" name="worldChampionships" value="<%= team.worldChampionships %>" step="0.01" required>
+                <label for="country">Pais:</label>
+                <input type="text" id="country" name="country" value="<%= team.country %>" required>
 
-            <button type="submit">Desar Canvis</button>
-        </form>
-        <a href="/teams">Tornar al llistat</a>
+                <label for="worldChampionships">Campionats de Constructors:</label>
+                <input type="number" id="worldChampionships" name="worldChampionships" value="<%= team.worldChampionships %>" step="1" required>
+
+                <label for="photo">URL Foto:</label>
+                <input type="url" id="photo" name="photo" value="<%= team.photo %>" placeholder="https://example.com/foto.jpg">
+
+                <button type="submit" class="btn-primary">Desar Canvis</button>
+            </form>
+
+            <a href="/teams" class="nav-link">Tornar al llistat</a>
+        </div>
     </main>
 </body>
 
