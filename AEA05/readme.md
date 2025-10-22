@@ -57,12 +57,47 @@ Aquest projecte gestiona **equips de Fórmula 1** (`teams`) i **jocs** (`games`)
 
 ---
 
-## **Observacions**
-
-- Cal que el fitxer `db/db.json` tingui la següent estructura mínima:
-
+## **Observacions** - Cal que el fitxer db/db.json tingui la següent estructura mínima:
 ```json
 {
   "teams": [],
   "games": []
 }
+```
+---
+
+## **Proves REST CLIENT**
+
+- **GET Equip 5**  
+  Ruta: `http://localhost:3000/teams/5`  
+  <img src="./public/images/Get-team1.png" alt="get" width="600">
+
+- **Post Joc**  
+  Ruta: `POST http://localhost:3000/games/create`  
+  - Dades
+  ```json
+   {
+      "name": "Super Mario Odyssey",
+      "category": "Platform",
+      "price": 59.99,
+      "photo": "https://upload.wikimedia.org/wikipedia/en/8/8d/Super_Mario_Odyssey.jpg"
+   }
+   ```
+ <img src="./public/images/Post-Mario.png" alt="post" width="600">
+
+- **Put Joc**  
+  Ruta: `PUT http://localhost:3000/games/2`  
+  - Dades
+  ```json
+   {
+    "name": "Rocket League Ultimate",
+    "category": "Sports",
+    "price": 24.99,
+    "photo": "https://logos-world.net/wp-content/uploads/2020/11/Rocket-League-Emblem.png"
+   }
+   ```
+ <img src="./public/images/Put.png" alt="put" width="600">
+
+- **Delete Joc 3**  
+  Ruta: `DELETE http://localhost:3000/games/3`  
+  <img src="./public/images/Delete-joc.png" alt="delete" width="600">

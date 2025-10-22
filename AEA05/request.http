@@ -1,31 +1,123 @@
-GET http://localhost:3000/products
+# =========================
+# TEAMS
+# =========================
 
+GET http://localhost:3000/teams
 ###
 
-GET http://localhost:3000/products/2
-
+GET http://localhost:3000/teams/1
 ###
 
-POST http://localhost:3000/products HTTP/1.1
+GET http://localhost:3000/teams/2
+###
+
+GET http://localhost:3000/teams/3
+###
+
+GET http://localhost:3000/teams/4
+###
+
+GET http://localhost:3000/teams/5
+###
+
+GET http://localhost:3000/teams/6
+###
+
+GET http://localhost:3000/teams/7
+###
+
+GET http://localhost:3000/teams/8
+###
+
+GET http://localhost:3000/teams/9
+###
+
+GET http://localhost:3000/teams/10
+###
+
+POST http://localhost:3000/teams/create
 Content-Type: application/json
 
 {
-    "name": "Laptop 4",
-    "price": 999.99,
-    "category": "Electronics"
+    "name": "Alpha Tauri",
+    "country": "Italy",
+    "worldChampionships": 0,
+    "photo": "https://upload.wikimedia.org/wikipedia/en/3/3d/Scuderia_AlphaTauri_Logo.png"
 }
-
 ###
 
-PUT http://localhost:3000/products/3 HTTP/1.1
+PUT http://localhost:3000/teams/2
 Content-Type: application/json
 
 {
-  "name": "Gaming Laptop",
-  "price": 1199.99,
-  "category": "Electronics"
+    "name": "Mercedes AMG",
+    "country": "Germany",
+    "worldChampionships": 8,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png"
 }
-
 ###
 
-DELETE http://localhost:3000/products/3 HTTP/1.1
+DELETE http://localhost:3000/teams/3
+###
+
+# =========================
+# GAMES
+# =========================
+
+GET http://localhost:3000/games
+###
+
+GET http://localhost:3000/games/1
+###
+
+GET http://localhost:3000/games/2
+###
+
+GET http://localhost:3000/games/3
+###
+
+GET http://localhost:3000/games/4
+###
+
+GET http://localhost:3000/games/5
+###
+
+GET http://localhost:3000/games/6
+###
+
+GET http://localhost:3000/games/7
+###
+
+GET http://localhost:3000/games/8
+###
+
+GET http://localhost:3000/games/9
+###
+
+GET http://localhost:3000/games/10
+###
+
+POST http://localhost:3000/games/create
+Content-Type: application/json
+
+{
+    "name": "Super Mario Odyssey",
+    "category": "Platform",
+    "price": 59.99,
+    "photo": "https://upload.wikimedia.org/wikipedia/en/8/8d/Super_Mario_Odyssey.jpg"
+}
+###
+
+PUT http://localhost:3000/games/2
+Content-Type: application/json
+
+{
+    "name": "Rocket League Ultimate",
+    "category": "Sports",
+    "price": 24.99,
+    "photo": "https://logos-world.net/wp-content/uploads/2020/11/Rocket-League-Emblem.png"
+}
+###
+
+DELETE http://localhost:3000/games/3
+###
