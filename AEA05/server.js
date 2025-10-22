@@ -79,16 +79,9 @@ app.post('/logout', (req, res) => {
     res.redirect('/');          // redirige al login
 });
 
-
-app.get('/protected2', (req, res) => {
-    const { user } = req.session
-    if (!user) return res.status(403).send('acceso no autorizado')
-    res.render('protected2', user)
-});
-
 app.get('/protected', (req, res) => {
     const { user } = req.session
-    if (!user) return res.status(403).send('acceso no autorizado')
+    if (!user) return res.redirect('/');
     res.render('home', user)
 });
 

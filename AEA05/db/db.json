@@ -1,104 +1,153 @@
 {
-    "teams": [
-        {
-            "id": 1,
-            "name": "McLaren",
-            "country": "United Kingdom",
-            "worldChampionships": "9",
-            "photo": "https://static.vecteezy.com/system/resources/previews/020/500/043/non_2x/mclaren-brand-logo-symbol-orange-design-british-car-automobile-illustration-free-vector.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Mercedes",
-            "country": "Germany",
-            "worldChampionships": "8",
-            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png"
-        },
-        {
-            "id": 3,
-            "name": "Ferrari",
-            "country": "Italy",
-            "worldChampionships": 16,
-            "photo": "https://logos-world.net/wp-content/uploads/2020/07/Ferrari-Scuderia-Logo-700x394.png"
-        },
-        {
-            "id": 4,
-            "name": "Red Bull Racing",
-            "country": "Austria",
-            "worldChampionships": 6,
-            "photo": "https://images.seeklogo.com/logo-png/40/2/red-bull-racing-f1-logo-png_seeklogo-406796.png"
-        },
-        {
-            "id": 5,
-            "name": "Williams",
-            "country": "United Kingdom",
-            "worldChampionships": 9,
-            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Logo_Williams_F1.png/960px-Logo_Williams_F1.png"
-        },
-        {
-            "id": 6,
-            "name": "Racing Bulls",
-            "country": "Italy",
-            "worldChampionships": 0,
-            "photo": "https://destinationformula1.com/wp-content/uploads/2025/03/racing-bulls.png"
-        },
-        {
-            "id": 7,
-            "name": "Aston Martin",
-            "country": "United Kingdom",
-            "worldChampionships": 0,
-            "photo": "https://1000logos.net/wp-content/uploads/2020/02/Aston-Martin-Logo.png"
-        },
-        {
-            "id": 8,
-            "name": "Kick Sauber",
-            "country": "Switzerland",
-            "worldChampionships": 0,
-            "photo": "https://f1store2.formula1.com/content/assets/Formula_1_Kick_Sauber_9887-1184079496386.0635.svg"
-        },
-        {
-            "id": 9,
-            "name": "Haas",
-            "country": "United States",
-            "worldChampionships": 0,
-            "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Logo_Haas_F1.png"
-        },
-        {
-            "id": 10,
-            "name": "Alpine",
-            "country": "France",
-            "worldChampionships": 2,
-            "photo": "https://download.logo.wine/logo/Alpine_(automobile)/Alpine_(automobile)-Logo.wine.png"
-        }
-    ],
-    "games": [
-        {
-            "id": 1,
-            "name": "The Legend of Zelda: Breath of the Wild",
-            "price": "60",
-            "category": "Adventure",
-            "photo": "https://gaming-cdn.com/images/products/2616/orig/the-legend-of-zelda-breath-of-the-wild-switch-juego-nintendo-eshop-europe-cover.jpg?v=1730381682"
-        },
-        {
-            "id": 2,
-            "name": "Rocket League",
-            "price": "19.99",
-            "category": "Sports",
-            "photo": "https://logos-world.net/wp-content/uploads/2020/11/Rocket-League-Emblem.png"
-        },
-        {
-            "id": 3,
-            "name": "GTA V",
-            "price": "29.99",
-            "category": "Action",
-            "photo": "https://logos-world.net/wp-content/uploads/2021/02/Grand-Theft-Auto-V-GTA-5-Logo.png"
-        },
-        {
-            "id": 4,
-            "name": "Valorant",
-            "price": "0",
-            "category": "Shooter",
-            "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png"
-        }
-    ]
+  "teams": [
+    {
+      "id": 1,
+      "name": "McLaren",
+      "country": "United Kingdom",
+      "worldChampionships": "9",
+      "photo": "https://static.vecteezy.com/system/resources/previews/020/500/043/non_2x/mclaren-brand-logo-symbol-orange-design-british-car-automobile-illustration-free-vector.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mercedes",
+      "country": "Germany",
+      "worldChampionships": "8",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/1200px-Mercedes-Logo.svg.png"
+    },
+    {
+      "id": 3,
+      "name": "Ferrari",
+      "country": "Italy",
+      "worldChampionships": 16,
+      "photo": "https://logos-world.net/wp-content/uploads/2020/07/Ferrari-Scuderia-Logo-700x394.png"
+    },
+    {
+      "id": 4,
+      "name": "Red Bull Racing",
+      "country": "Austria",
+      "worldChampionships": 6,
+      "photo": "https://images.seeklogo.com/logo-png/40/2/red-bull-racing-f1-logo-png_seeklogo-406796.png"
+    },
+    {
+      "id": 5,
+      "name": "Williams",
+      "country": "United Kingdom",
+      "worldChampionships": 9,
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Logo_Williams_F1.png/960px-Logo_Williams_F1.png"
+    },
+    {
+      "id": 6,
+      "name": "Racing Bulls",
+      "country": "Italy",
+      "worldChampionships": 0,
+      "photo": "https://destinationformula1.com/wp-content/uploads/2025/03/racing-bulls.png"
+    },
+    {
+      "id": 7,
+      "name": "Aston Martin",
+      "country": "United Kingdom",
+      "worldChampionships": 0,
+      "photo": "https://1000logos.net/wp-content/uploads/2020/02/Aston-Martin-Logo.png"
+    },
+    {
+      "id": 8,
+      "name": "Kick Sauber",
+      "country": "Switzerland",
+      "worldChampionships": 0,
+      "photo": "https://f1store2.formula1.com/content/assets/Formula_1_Kick_Sauber_9887-1184079496386.0635.svg"
+    },
+    {
+      "id": 9,
+      "name": "Haas",
+      "country": "United States",
+      "worldChampionships": 0,
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Logo_Haas_F1.png"
+    },
+    {
+      "id": 10,
+      "name": "Alpine",
+      "country": "France",
+      "worldChampionships": 2,
+      "photo": "https://download.logo.wine/logo/Alpine_(automobile)/Alpine_(automobile)-Logo.wine.png"
+    },
+    {
+      "id": 11,
+      "name": "Cadilac",
+      "country": "USA",
+      "worldChampionships": 0,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrfq7JAWRhdZFclkjy9yVNijhyyq1XBM5HwQ&s"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "name": "The Legend of Zelda: Breath of the Wild",
+      "price": "60",
+      "category": "Adventure",
+      "photo": "https://gaming-cdn.com/images/products/2616/orig/the-legend-of-zelda-breath-of-the-wild-switch-juego-nintendo-eshop-europe-cover.jpg?v=1730381682"
+    },
+    {
+      "id": 2,
+      "name": "Rocket League",
+      "price": "0",
+      "category": "Sports",
+      "photo": "https://logos-world.net/wp-content/uploads/2020/11/Rocket-League-Emblem.png"
+    },
+    {
+      "id": 3,
+      "name": "GTA V",
+      "price": "29.99",
+      "category": "Action",
+      "photo": "https://logos-world.net/wp-content/uploads/2021/02/Grand-Theft-Auto-V-GTA-5-Logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Valorant",
+      "price": "0",
+      "category": "Shooter",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1280px-Valorant_logo_-_pink_color_version.svg.png"
+    },
+    {
+      "id": 5,
+      "name": "CSGO",
+      "price": "0",
+      "category": "Shooter",
+      "photo": "https://logos-world.net/wp-content/uploads/2023/02/CSGO-Symbol.png"
+    },
+    {
+      "id": 6,
+      "name": "Minecraft",
+      "price": "30",
+      "category": "Sandbox",
+      "photo": "https://images.icon-icons.com/2699/PNG/512/minecraft_logo_icon_168974.png"
+    },
+    {
+      "id": 7,
+      "name": "FIFA 24",
+      "price": "59.99",
+      "category": "Sports",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/EA_Sports_FC_24_logo.svg/2560px-EA_Sports_FC_24_logo.svg.png"
+    },
+    {
+      "id": 8,
+      "name": "Cyberpunk 2077",
+      "price": "49.99",
+      "category": "RPG",
+      "photo": "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Super Mario Odyssey",
+      "price": "59.99",
+      "category": "Platformer",
+      "photo": "https://upload.wikimedia.org/wikipedia/en/8/8d/Super_Mario_Odyssey.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Assassin's Creed Valhalla",
+      "price": "59.99",
+      "category": "Action",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC5obyjyNAFT378GaKl0VG4b-3-sPBV57mNg&s"
+    }
+  ]
 }
