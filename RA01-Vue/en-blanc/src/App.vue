@@ -2,6 +2,8 @@
 import CanviMissatge from './CanviMissatge.vue'
 import Contador from './Contador.vue'
 import DataBinding from './DataBinding.vue';
+import Form from './Form.vue';
+import RenderitzatBucle from './RenderitzatBucle.vue';
 </script>
 
 <template>
@@ -9,17 +11,27 @@ import DataBinding from './DataBinding.vue';
     <CanviMissatge />
     <Contador />
     <DataBinding />
+    <Form />
+    <RenderitzatBucle />
   </div>
 </template>
 
 <style scoped>
 .app-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-  gap: 20px; /* espacio entre los componentes */
-  justify-items: center; /* centra los elementos en cada columna */
-  align-items: start; /* alinea al inicio verticalmente */
-  padding: 20px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+  gap: 20px; /* espacio moderado entre los componentes */
+  padding: 30px;
+  justify-items: center;
+  align-items: start;
+  background-color: #f5faff;
 }
 
+.app-container > * {
+  width: 80%;
+  height: auto;
+  font-size: 20px;
+
+}
 </style>
+
