@@ -1,9 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
-const missatge = ref('Hola, món!')
+const missatge = ref('ALEXXX')
+
 const canviarMissatge = () => {
-  missatge.value = 'Hola, Vue'
+  if (missatge.value === 'ALEXXX') {
+    missatge.value = 'Sanchezzzz'
+  } else {
+    missatge.value = 'ALEXXX'
+  }
 }
 </script>
 
@@ -21,7 +26,7 @@ div {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #cce7ff; /* fondo suave */
+  background-color: #cce7ff;
   border-radius: 10px;
   text-align: center;
 }
