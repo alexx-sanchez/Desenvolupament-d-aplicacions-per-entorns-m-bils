@@ -5,7 +5,7 @@
 
     <!-- FORMULARI CREACIO -->
     <form @submit.prevent="afegirTasca">
-      <input type="text" placeholder="Escriu el nom de la tasca" v-model="novaTasca">
+      <input type="text" placeholder="Afegir tasca nova" v-model="novaTasca">
       <button type="submit">Afegir</button>
     </form>
 
