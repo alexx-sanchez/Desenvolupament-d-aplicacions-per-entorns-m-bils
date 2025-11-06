@@ -1,7 +1,8 @@
 <script setup>
-import Fill from './components/Fill.vue';
+import TeaPlan from './components/TeaPlan.vue';
+import { ref } from 'vue';
 
-const colores = ['Verds', 'Vermells', 'Negre', 'Groc']
+const colores = ref(['Verds', 'Vermells', 'Negre', 'Groc']);
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const colores = ['Verds', 'Vermells', 'Negre', 'Groc']
         </h2>
 
         <div class="plans">
-            <Fill v-for="color in colores" :key="color" :nom="color" />
+            <TeaPlan v-for="color in colores" :key="color" :nom="color" />
         </div>
     </div>
 </template>

@@ -10,5 +10,4 @@ const prop = defineProps({
             <span class="title"> {{ nom }}</span>
         </div>
     </div>
-
 </template>
