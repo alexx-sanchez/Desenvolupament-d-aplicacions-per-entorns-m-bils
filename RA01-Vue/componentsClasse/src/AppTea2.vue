@@ -17,8 +17,8 @@ const gestionarPlan = (color) => {
         <h2 class="subtitle">
             Disposem dels millor tes del món
         </h2>
-        <p>Has seleccionat: <strong>{{ planRebut }}</strong></p>
         <div class="plans">
+            <p>Has seleccionat: <strong>{{ planRebut }}</strong></p>
             <TeaPlan2 v-for="color in colores" :key="color" :nom="color" @nomEnviat="gestionarPlan" />
         </div>
     </div>
