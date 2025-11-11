@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import TaskForm from './components/TaskForm.vue'
+import TaskItem from './components/TaskItem.vue'
 
 const filtrePendents = ref(false)
 
@@ -17,7 +18,7 @@ const totalCompletades = computed(() => {
 })
 
 const tasquesMostrar = computed(() => {
-  return filtrePendents.value 
+  return filtrePendents.value
     ? tasques.value.filter(t => !t.completada)
     : tasques.value
 })
@@ -29,8 +30,8 @@ const canviaEstat = (tasca) => {
 const afegirTasca = (nomTasca) => {
   if (nomTasca.trim() === '') return
 
-  const maxId = tasques.value.length > 0 
-    ? Math.max(...tasques.value.map(t => t.id)) 
+  const maxId = tasques.value.length > 0
+    ? Math.max(...tasques.value.map(t => t.id))
     : 0
 
   const tasca = {
@@ -69,13 +70,12 @@ const eliminaTasca = (id) => {
     <div class="task-container">
       <ul v-if="tasquesMostrar.length > 0">
         <li v-for="tasca in tasquesMostrar" :key="tasca.id" :class="tasca.completada ? 'completada' : 'pendent'">
-          {{ tasca.nom }}
+          <TaskItem 
+            :id="tasca.id" 
+            :nom="tasca.nom" 
+            :completada="tasca.completada" 
+          />
 
-          <button @click="canviaEstat(tasca)">
-            {{ tasca.completada ? 'Desmarcar' : 'Completar' }}
-          </button>
-
-          <button @click="eliminaTasca(tasca.id)">🗑️</button>
         </li>
       </ul>
       <p v-else>No hi ha tasques</p>
