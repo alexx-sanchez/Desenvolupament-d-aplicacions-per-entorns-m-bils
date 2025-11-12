@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import TaskForm from './components/TaskForm.vue'
-import TaskItem from './components/TaskItem.vue'
+import TaskList from './components/TaskList.vue'
 
 const filtrePendents = ref(false)
 
@@ -13,75 +13,57 @@ const tasques = ref([
   { id: 5, nom: 'Tasca 5', completada: false }
 ])
 
-const totalCompletades = computed(() => {
-  return tasques.value.filter(t => t.completada).length
-})
+const totalCompletades = computed(() =>
+  tasques.value.filter(t => t.completada).length
+)
 
-const tasquesMostrar = computed(() => {
-  return filtrePendents.value
-    ? tasques.value.filter(t => !t.completada)
-    : tasques.value
-})
+const tasquesMostrar = computed(() =>
+  filtrePendents.value ? tasques.value.filter(t => !t.completada) : tasques.value
+)
 
-const canviaEstat = (tasca) => {
-  tasca.completada = !tasca.completada
+const canviaEstat = (id) => {
+  const tasca = tasques.value.find(t => t.id === id)
+  if (tasca) tasca.completada = !tasca.completada
 }
 
 const afegirTasca = (nomTasca) => {
   if (nomTasca.trim() === '') return
-
-  const maxId = tasques.value.length > 0
-    ? Math.max(...tasques.value.map(t => t.id))
-    : 0
-
-  const tasca = {
+  const maxId = tasques.value.length > 0 ? Math.max(...tasques.value.map(t => t.id)) : 0
+  
+  tasques.value.push({
     id: maxId + 1,
     nom: nomTasca,
     completada: false
-  }
-
-  tasques.value.push(tasca)
+  })
 }
 
 const eliminaTasca = (id) => {
-  const index = tasques.value.findIndex(t => t.id === id)
-  if (index !== -1) {
-    tasques.value.splice(index, 1)
-  }
+  tasques.value = tasques.value.filter(t => t.id !== id)
 }
 </script>
 
 <template>
   <h1>Gestor de tasques</h1>
   <div class="container">
-
-    <!-- Formulari de creació -->
+    <!-- Formulari -->
     <TaskForm @novaTasca="afegirTasca" />
 
     <!-- Filtre -->
     <div class="filtres">
       <form @submit.prevent>
-        <input type="checkbox" v-model="filtrePendents">
+        <input type="checkbox" v-model="filtrePendents" />
         <label>Mostrar només pendents</label>
       </form>
     </div>
 
     <!-- Llista de tasques -->
-    <div class="task-container">
-      <ul v-if="tasquesMostrar.length > 0">
-        <li v-for="tasca in tasquesMostrar" :key="tasca.id" :class="tasca.completada ? 'completada' : 'pendent'">
-          <TaskItem 
-            :id="tasca.id" 
-            :nom="tasca.nom" 
-            :completada="tasca.completada" 
-          />
+    <TaskList
+      :tasques="tasquesMostrar"
+      @completarTasca="canviaEstat"
+      @eliminarTasca="eliminaTasca"
+    />
 
-        </li>
-      </ul>
-      <p v-else>No hi ha tasques</p>
-    </div>
-
-    <!-- Total tasques -->
+    <!-- Total -->
     <div class="total">
       Total: {{ tasques.length }} | Completades: {{ totalCompletades }}
     </div>
@@ -107,36 +89,6 @@ h1 {
 
 .filtres {
   margin-bottom: 20px;
-}
-
-.task-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-.task-container li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  background-color: #222;
-  color: #fff;
-  border-left: 5px solid;
-}
-
-.task-container li.completada {
-  border-color: #00ff00;
-  text-decoration: line-through;
-}
-
-.task-container li.pendent {
-  border-color: #ffcc00;
-}
-
-.task-container li button {
-  margin-left: 5px;
 }
 
 .total {
