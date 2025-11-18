@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
+
+/* import Home from '@/views/Home.vue'
 import Frameworks from '@/views/Frameworks.vue'
-import FrameworkDetail from '@/views/FrameworkDetail.vue'
+// import FrameworkDetail from '@/views/FrameworkDetail.vue'
+import FrameworkDetail2 from '@/views/FrameworkDetail2.vue' */
+
 
 
 const router = createRouter({
@@ -10,16 +13,16 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: () => import('@/views/Home.vue')
     },
     {
       path: "/frameworks",
       name: "frameworks",
-      component: Frameworks,
+      component: () => import('@/views/Frameworks.vue'),
       children: [{
         path: ":id",
-        name: "frameworkDetail",
-        component: FrameworkDetail
+        name: "frameworkDetail2",
+        component: () => import('@/views/FrameworkDetail2.vue')
       }]
     }
   ],
