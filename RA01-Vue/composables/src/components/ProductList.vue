@@ -2,8 +2,7 @@
 import { useFetch } from '@/composables/useFetch';
 import ProductItem from './ProductItem.vue';
 
-const { data, error, loading, fetchData } = useFetch('https://dummyjson.com/products');
-
+const { data, error, loading, fetchData } = useFetch('https://dummyjson.com/products?limit=6');
 </script>
 
 <template>

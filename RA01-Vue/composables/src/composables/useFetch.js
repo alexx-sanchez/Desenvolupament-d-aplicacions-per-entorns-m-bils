@@ -16,7 +16,6 @@ export function useFetch(url) {
                 throw new Error("Error a la petició: "+ res.status); // si no hi ha resposta positiva, emetre error
             }
             data.value = await res.json();
-            console.log(data.value)
 
         } catch (err) {
             error.value = err.message
