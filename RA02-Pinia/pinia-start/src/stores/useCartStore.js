@@ -1,8 +1,16 @@
 import { defineStore } from 'pinia'
-import { watch } from 'vue'
+import { ref } from 'vue'
 
-const items = []
+const items = ref([])
 
 export const useCartStore = defineStore('CartStore', () => {
-    return { items }
+
+    function addToCart(contador, item) {
+        const num = parseInt(contador)
+        for (let i = 0; i < num; i++) {
+            items.value.push(item)
+        }
+    }
+
+    return { items, addToCart }
 })
