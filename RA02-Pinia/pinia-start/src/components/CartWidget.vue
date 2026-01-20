@@ -13,24 +13,32 @@ const active = ref(false);
     <!-- Icon that always shows -->
     <span class="cursor-pointer" @click="active = true">
       <fa icon="shopping-cart" size="lg" class="text-gray-700" />
-      <div class="cart-count absolute">{{ CartStore.items.length }}</div>
+      <div class="cart-count absolute">{{ CartStore.count }}</div>
     </span>
     <!-- Modal Overlay only shows when cart is clicked on -->
     <AppModalOverlay :active="active" @close="active = false">
-      <div>
+      <div v-if="!CartStore.isEmpty">
         <ul class="items-in-cart">
-          <CartItem  v-for="item in CartStore.items" :key="item.name" :product="item" :count="item" />
+          <CartItem  
+            v-for="( items, name ) in CartStore.grouped" 
+            :key="name" 
+            :product="items[0]" 
+            :count="items.length"
+            @updateCount="CartStore.setItemCount(items[0], $event)"
+            @clear="CartStore.clearItem(name)"   
+          />
         </ul>
         <div class="flex justify-end text-2xl mb-5">
-          Total: <strong>0</strong>
+          Total: <strong>${{ CartStore.total }}</strong>
         </div>
         <div class="flex justify-end">
-          <AppButton class="secondary mr-2">Clear Cart</AppButton>
+          <AppButton class="secondary mr-2" @click="CartStore.$reset()" >Clear Cart</AppButton>
           <AppButton class="primary">Checkout</AppButton>
         </div>
       </div>
+
       <!-- Uncomment and use condition to show when cart is empty -->
-      <!-- <div><em>Cart is Empty</em></div> -->
+      <div v-else><em>Cart is Empty</em></div>
     </AppModalOverlay>
   </div>
 </template>
