@@ -1,7 +1,10 @@
-<script setup></script>
+<script setup>
+import NavBar from '@/components/NavBar.vue'
+import CurrentBuildWidget from '@/components/CurrentBuildWidget.vue'
+</script>
 
 <template>
-  <h1>APP</h1>
+  <NavBar />
+  <CurrentBuildWidget />
+  <RouterView />
 </template>
-
-<style scoped></style>
