@@ -8,3 +8,7 @@ import CurrentBuildWidget from '@/components/CurrentBuildWidget.vue'
   <CurrentBuildWidget />
   <RouterView />
 </template>
+
+<style scoped>
+
+</style>

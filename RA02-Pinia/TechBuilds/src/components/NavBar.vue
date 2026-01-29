@@ -1,5 +1,5 @@
 <script setup>
-import { useUserSessionStore } from '@/stores/UserSessionStore'
+import { useUserSessionStore } from '@/stores/useUserSessionStore'
 const userStore = useUserSessionStore()
 </script>
 

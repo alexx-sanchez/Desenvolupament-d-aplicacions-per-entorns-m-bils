@@ -8,8 +8,5 @@ export const useUserSessionStore = defineStore('userSession', () => {
     window.open('https://github.com/alexx-sanchez', '_blank')
   }
 
-  return {
-    username,
-    visitGithub
-  }
+  return { username, visitGithub }
 })

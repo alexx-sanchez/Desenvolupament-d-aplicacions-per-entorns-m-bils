@@ -12,9 +12,5 @@ export const useHardwareStore = defineStore('hardware', () => {
     loading.value = false
   }
 
-  return {
-    hardware,
-    loading,
-    loadHardware
-  }
+  return { hardware, loading, loadHardware }
 })

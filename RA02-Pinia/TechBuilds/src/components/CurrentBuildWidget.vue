@@ -1,27 +1,32 @@
 <script setup>
 import { ref } from 'vue'
-import { useBuildStore } from '@/stores/BuildStore'
+import { useBuildStore } from '@/stores/useBuildStore'
 
 const buildStore = useBuildStore()
-const active = ref(false)
+const actiu = ref(false)
+
+function checkoutAndClose() {
+  buildStore.checkout()
+  actiu.value = false
+}
 </script>
 
 <template>
-  <div>
-    <button class="build-button" @click="active = true">
+  <div class="container">
+    <button class="build-button" @click="actiu = true">
       🖥️ Build ({{ buildStore.totalPrice }} €)
     </button>
 
-    <div v-if="active" class="modal">
+    <div v-if="actiu" class="modal">
       <div class="modal-content">
         <div v-for="(items, type) in buildStore.groupedByType" :key="type">
           <h3>{{ type }}</h3>
           <ul>
-            <li v-for="(item, index) in items" :key="item.name">
+            <li v-for="item in items" :key="item.name">
               {{ item.name }}
               <span v-if="item.quantity > 1"> x{{ item.quantity }}</span>
-              {{ item.price }}€
-              <button @click="buildStore.removeComponent(index, type)">❌</button>
+              {{ item.price * item.quantity }}€
+              <button @click="buildStore.removeComponent(item)">❌</button>
             </li>
           </ul>
         </div>
@@ -30,14 +35,22 @@ const active = ref(false)
           Total: {{ buildStore.totalPrice }} €
         </div>
 
-        <button class="checkout-button" @click="buildStore.checkout">Checkout</button>
-        <button class="close-button" @click="active = false">Tancar</button>
+        <button class="checkout-button" @click="checkoutAndClose">Checkout</button>
+        <button class="close-button" @click="actiu = false">Tancar</button>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.container {
+  position: fixed;
+  top: 10%;
+  right: 1rem;
+  z-index: 999;
+}
+
+
 /* Botó Build principal */
 .build-button {
   background-color: #3b82f6; /* blau principal de la app */
@@ -116,7 +129,7 @@ const active = ref(false)
 
 /* Botó de eliminar component */
 .modal-content li button {
-  background-color: #ef4444;
+  background-color: #fd8e8e;
   color: white;
   border: none;
   padding: 0.25rem 0.5rem;

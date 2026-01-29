@@ -1,5 +1,5 @@
 <script setup>
-import { useBuildStore } from '@/stores/BuildStore'
+import { useBuildStore } from '@/stores/useBuildStore'
 const buildStore = useBuildStore()
 </script>
 

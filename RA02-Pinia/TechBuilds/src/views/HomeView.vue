@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
-import { useHardwareStore } from '@/stores/HardwareStore'
-import { useBuildStore } from '@/stores/BuildStore'
+import { useHardwareStore } from '@/stores/useHardwareStore'
+import { useBuildStore } from '@/stores/useBuildStore'
 import ComponentCard from '@/components/ComponentCard.vue'
 
 const hardwareStore = useHardwareStore()
